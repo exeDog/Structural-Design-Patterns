@@ -16,6 +16,21 @@ public abstract class MenuComponent {
         return url;
     }
 
-    public abstract String toString();
+    String print(MenuComponent menuComponent) {
+        StringBuilder stringBuilder = new StringBuilder(name);
+        stringBuilder.append(":");
+        stringBuilder.append(url);
+        stringBuilder.append("\n");
+        return stringBuilder.toString();
+    }
 
+    public MenuComponent add(MenuComponent menuComponent) {
+        throw new UnsupportedOperationException("Feature not implemented");
+    };
+
+    public MenuComponent remove(MenuComponent menuComponent) {
+        throw new UnsupportedOperationException("Feature not implemented");
+    };
+
+    public abstract String toString();
 }

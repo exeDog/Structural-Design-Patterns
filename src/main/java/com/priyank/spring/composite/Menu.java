@@ -8,6 +8,26 @@ public class Menu extends MenuComponent {
 
     @Override
     public String toString() {
-        return null;
+       StringBuilder stringBuilder = new StringBuilder();
+
+       stringBuilder.append(print(this));
+
+        for (MenuComponent menuComponent : menuComponents) {
+            stringBuilder.append(menuComponent.toString());
+        }
+
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public MenuComponent add(MenuComponent menuComponent) {
+        menuComponents.add(menuComponent);
+        return menuComponent;
+    }
+
+    @Override
+    public MenuComponent remove(MenuComponent menuComponent) {
+        menuComponents.remove(menuComponent);
+        return menuComponent;
     }
 }
